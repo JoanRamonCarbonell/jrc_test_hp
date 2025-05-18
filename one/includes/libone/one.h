@@ -1,5 +1,7 @@
 #pragma once
 
+namespace libone {
+
 /**
  * @brief Method to find a value within a range, that being evaluated with another provided function, matches an arbitrary value.
  * @param f increasing function. Receives an integer to evaluate it to a float. 
@@ -10,3 +12,5 @@
  *         Returns -1 otherwise. 
  */
 long find(double (*f)(long), double y, long a, long b);
+
+} // namespace libone
