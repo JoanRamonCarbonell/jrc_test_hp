@@ -19,7 +19,7 @@ jobs:
       run: mkdir build
 
     - name: Configure with CMake
-      run: cmake -S . -B build
+      run: cmake -S one -B build
 
     - name: Build Lib
       run: cmake --build build
