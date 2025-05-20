@@ -17,20 +17,22 @@ jobs:
       with:
         python-version: '3.10'  # Set the Python 3 version here
 
-    - name: Set up Python 2
-      uses: actions/setup-python@v4
-      with:
-        python-version: '2.7'  # Set the Python 2 version here
+    # NOTE : The support for python 2.7 was removed on June 19, 2023
+    # - name: Set up Python 2
+    #   uses: actions/setup-python@v4
+    #   with:
+    #     python-version: '2.7'  # Set the Python 2 version here
 
     - name: Install dependencies for Python 3
       run: |
         python3 -m pip install --upgrade pip
         pip install pybind11  # Install pybind11 for CMake integration
 
-    - name: Install dependencies for Python 2
-      run: |
-        python2 -m pip install --upgrade pip
-        pip install pybind11  # Install pybind11 for CMake integration
+    # NOTE : The support for python 2.7 was removed on June 19, 2023
+    # - name: Install dependencies for Python 2
+    #   run: |
+    #     python2 -m pip install --upgrade pip
+    #     pip install pybind11  # Install pybind11 for CMake integration
 
     - name: Install tools needed for building
       run: sudo apt-get update && sudo apt-get install -y cmake g++ build-essential
@@ -47,5 +49,6 @@ jobs:
     - name: Run Python 3 tests
       run: python3 test/one_test.py
 
-    - name: Run Python 2 tests
-      run: python2 test/one_test.py
+    # NOTE : The support for python 2.7 was removed on June 19, 2023
+    # - name: Run Python 2 tests
+    #   run: python2 test/one_test.py
