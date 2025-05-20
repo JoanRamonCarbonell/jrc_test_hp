@@ -45,12 +45,6 @@ jobs:
         cmake ..
         cmake --build .
 
-    # - name: Configure with CMake
-    #   run: cmake -S one -B build -DCMAKE_BUILD_TYPE=Release  # Set the build type to Release
-
-    # - name: Build Lib
-    #   run: cmake --build build
-
     - name: Run Python 3 tests
       run: python3 one/test/one_test.py
 
