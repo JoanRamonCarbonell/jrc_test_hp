@@ -7,7 +7,7 @@ build_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'build')
 
 # Ensure the path to libone_bindings.so or libone_bindings.pyd is correct based on your platform
 module_name = 'libone_bindings'
-library_path = os.path.join(build_dir, 'lib' + module_name + '.so')  # Adjust if necessary (e.g., for Windows: .pyd)
+library_path = os.path.join(build_dir, 'lib' + module_name + '.so')
 
 # Setup
 setup(
