@@ -20,7 +20,7 @@ FetchContent_MakeAvailable(pybind11)
 add_library(libone SHARED src/one.cpp)
 
 # libone include public for someone to link with 
-target_include_directories(libone PUBLIC includes/libone)
+target_include_directories(libone PUBLIC includes)
 
 # Create bindings for python module
 pybind11_add_module(libone_bindings
@@ -31,4 +31,4 @@ pybind11_add_module(libone_bindings
 target_link_libraries(libone_bindings PRIVATE libone)
 
 # libone_bindings include is private 
-target_include_directories(libone_bindings PRIVATE includes/libone)
+target_include_directories(libone_bindings PRIVATE includes)
