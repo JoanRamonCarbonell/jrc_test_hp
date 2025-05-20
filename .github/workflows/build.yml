@@ -47,7 +47,7 @@ jobs:
       run: cmake --build build
 
     - name: Run Python 3 tests
-      run: python3 test/one_test.py
+      run: python3 one/test/one_test.py
 
     # NOTE : The support for python 2.7 was removed on June 19, 2023
     # - name: Run Python 2 tests
