@@ -8,6 +8,7 @@ Main function exposed to Python:
 
 ```cpp
 long find(double (*f)(long), double y, long a, long b);
+```
 
 This function finds an integer x in the range [a, b], that matches f(x) == y.
 f(x) is an increasing function.
