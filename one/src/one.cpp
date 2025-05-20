@@ -1,8 +1,8 @@
-#include <one.h>
+#include "libone/one.h"
 
 namespace libone {
 
-long find(double (*f)(unsigned long), double y, long a, long b) {
+long find(double (*f)(long), double y, long a, long b) {
     long low{a};
     long high{b};
     long middle{0};
