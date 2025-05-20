@@ -8,8 +8,8 @@ long find(double (*f)(long), double y, long a, long b) {
     long middle{0};
     double f_middle{0.0};
 
-    if ((a < 0) || (b < 0)) {
-        // check a and b to be non-negative
+    if ((a < 0) || (b < 0) || (a > b)){
+        // check a and b to be non-negative and a < b
         return -1;
     }
 
