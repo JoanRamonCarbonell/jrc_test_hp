@@ -3,7 +3,14 @@ import sys
 import os
 
 # Add build directory to import path, so that libone_bindings can be found
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'build')))
+# Compute the path to the build directory
+build_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'build'))
+
+# Print it for debugging
+print("Adding to sys.path:", build_path)
+
+# Add the build directory to the Python module search path
+sys.path.insert(0, build_path)
 
 import libone_bindings
 
