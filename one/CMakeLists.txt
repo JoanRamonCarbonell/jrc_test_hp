@@ -33,8 +33,8 @@ target_link_libraries(libone_bindings PRIVATE libone)
 # libone_bindings include is private 
 target_include_directories(libone_bindings PRIVATE includes)
 
-#
 # Create a custom target to compile the library (this will be the default target)
+### BUILDLIB Target ###
 add_custom_target(buildlib ALL
     DEPENDS libone
 )
@@ -51,6 +51,7 @@ install(DIRECTORY includes/libone/
 )
 
 # Define the installlib target to trigger the install step
+### INSTALLIB Target ###
 add_custom_target(installlib
     COMMAND ${CMAKE_COMMAND} --build . --target install
     DEPENDS libone
@@ -60,4 +61,9 @@ add_custom_target(installlib
 install(TARGETS libone_bindings
     DESTINATION lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages
     COMPONENT python_bindings
+)
+
+### WRAPPER Target ###
+add_custom_target(wrapper
+    DEPENDS libone_bindings
 )
