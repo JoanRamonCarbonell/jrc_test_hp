@@ -41,15 +41,10 @@ jobs:
       run: mkdir build
 
     - name: Configure with CMake
-      run: cmake -S one -B build -DCMAKE_BUILD_TYPE=Release  # Set the build type to Release
+      run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release  # Set the build type to Release
 
     - name: Build Lib
       run: cmake --build build
-
-    - name: Install libone_bindings
-      run: |
-        cd one
-        python3 setup.py install  # Install the bindings
 
     - name: Run Python 3 tests
       run: python3 one/test/one_test.py
