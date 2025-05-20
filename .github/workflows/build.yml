@@ -48,7 +48,6 @@ jobs:
 
     - name: Install libone_bindings
       run: |
-        cd ..
         python3 setup.py install  # Install the bindings
 
     - name: Run Python 3 tests
