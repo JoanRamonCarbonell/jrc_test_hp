@@ -2,11 +2,6 @@
 
 namespace libone {
 
-// Increasing function
-double square(long x) {
-    return static_cast<double>(x * x);
-}
-
 long find(double (*f)(long), double y, long a, long b) {
     long low{a};
     long high{b};
@@ -20,9 +15,10 @@ long find(double (*f)(long), double y, long a, long b) {
 
     // binary search
     // split range in 2 halves and find in which part 'y' is located
-    while(low < high) {
+    // low == high ensures the corner case where a == b 
+    while(low <= high) {
         // calculate middle integer value of the current range
-        middle = low + ((high-low)/2);
+        middle = low + ((high - low) / 2);
         // evaluate integer into double
         f_middle = f(middle);
         if (f_middle == y) {
@@ -30,14 +26,25 @@ long find(double (*f)(long), double y, long a, long b) {
             return middle;
         } else if (f_middle < y) {
             // 'y' is in the upper half of the range, redefine low
-            low = middle;
+            // + 1 ensures progress when the middle decimal gets truncated
+            low = middle + 1;
         } else {
             // 'y' is in the lower half of the range, redefine high
-            high = middle;
+            // - 1 ensures progress when the middle decimal gets truncated
+            high = middle - 1;
         }
     }
         // when value not found
     return -1;
+}
+
+// Increasing function
+static double square(long x) {
+    return static_cast<double>(x * x);
+}
+
+long find_square(double y, long a, long b) {
+    return find(square, y, a, b);
 }
 
 } // namespace libone

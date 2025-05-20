@@ -4,10 +4,12 @@ namespace libone {
 
 /**
  * @brief Increasing method to return the square of a value.
- * @param long value. 
+ * @param y arbitrary double-float value
+ * @param a range low value
+ * @param b range high value
  * @return double square of input. 
  */
-double square(long x);
+long find_square(double y, long a, long b);
 
 /**
  * @brief Method to find a value within a range, that being evaluated with another provided function, matches an arbitrary value.
