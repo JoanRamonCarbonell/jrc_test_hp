@@ -6,11 +6,10 @@ namespace py = pybind11;
 PYBIND11_MODULE(libone_bindings, m) {
     m.doc() = "Python bindings for libone";
 
-    m.def("find", [](py::function f, double y, long a, long b) {
-        auto cpp_func = [&f](long x) -> double {
-            py::gil_scoped_acquire gil;
-            return f(x).cast<double>();
-        };
-        return libone::find(cpp_func, y, a, b);
-    }, "Find x in [a, b] such that f(x) == y");
+    // Expose square separately
+    m.def("square", &libone::square, "C++ square function");
+
+    m.def("find", [](double y, long a, long b) {
+        return libone::find(&libone::square, y, a, b);
+    }, "Find x such that f(x) == y in range [a, b], f(x) being a square()");
 }

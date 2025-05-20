@@ -3,6 +3,13 @@
 namespace libone {
 
 /**
+ * @brief Increasing method to return the square of a value.
+ * @param long value. 
+ * @return double square of input. 
+ */
+double square(long x);
+
+/**
  * @brief Method to find a value within a range, that being evaluated with another provided function, matches an arbitrary value.
  * @param f increasing function. Receives an integer to evaluate it to a float. 
  * @param y arbitrary double-float value

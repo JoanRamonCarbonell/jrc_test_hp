@@ -2,6 +2,11 @@
 
 namespace libone {
 
+// Increasing function
+double square(long x) {
+    return static_cast<double>(x * x);
+}
+
 long find(double (*f)(long), double y, long a, long b) {
     long low{a};
     long high{b};
