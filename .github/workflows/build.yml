@@ -46,6 +46,11 @@ jobs:
     - name: Build Lib
       run: cmake --build build
 
+    - name: Install libone_bindings
+      run: |
+        cd build
+        python3 setup.py install  # Install the bindings
+
     - name: Run Python 3 tests
       run: python3 one/test/one_test.py
 
