@@ -1,0 +1,45 @@
+Assignment tasks:
+=================
+[/] Functionality in C++
+	- What receives:
+		* increasing function "f" with integer input argument and float returning value 
+		* range of non-negative integers [a,b]
+		* arbitrary float number "y"
+	
+	- What returns : "long" integer
+
+	- Evaluation:
+		* if (a <= n <= b) && (f(n) == y) -> returns n
+		* else returns -1 
+
+	- Function signature :
+		"long find(double (*f)(long), double y, long a, long b);"
+
+	- Consider exact equality of the numbers, differences due to machine precision disregarded
+	- Don't use libraries for core functionality implementation
+	- Include comments to clarify implementation
+
+	[/] Include usage notes in code (/** ... */) -> Doxygen docu
+	[/] Improve solution to work with slow evaluation functions or perform search on very large input ranges [a,b]
+		-> Binary Search
+
+[/] Unit Tests for relevant use cases
+
+[/] README.md 
+	[/] how to install the C++ module
+	[/] how to execute the tests
+	[/] With format
+
+[/] GitHub action for a git repo, which contains this code
+	[/] Executed on every push
+	[/] Executes all tests in Python3
+	[x] Executes all tests in Python2 -> not supported
+	
+[/] Wrap C++ Library:
+	[/] Implement Python binding of the created C++ library
+	
+[ ] Build system with cmake with targets:
+	[/] buildlib -> compile C++ into "libone.so"
+ 	[/] installib -> install libone.so and headers into system
+	[/] wrapper -> generate Python wrapper code
+	[ PENDING ] pkg -> generate library and wrappers and bundle into python packageinstalled using pip.

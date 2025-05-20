@@ -1,0 +1,23 @@
+============
+ASSUMPTIONS:
+------------
+- Consider exact equality of the numbers, differences due to machine precision disregarded -> I'm not sure if I understand properly, but I assume I don't have to worry about roundings in this task.
+
+
+===============
+CONSIDERATIONS:
+---------------
+
+- Desing considerations about the suggested signature "long find(double (*f)(long), double y, long a, long b);" in C++:
+    1- "...long a, long b" :
+    	* If "a" and "b" must be non-negative integers, I think it is more approppriate/efficient to use unsigned long for 'a' and 'b':
+	"long find(double (*f)(unsigned long), double y, unsigned long a, unsigned long b);" instead.
+    	* However, using "unsigned long" for "a" and "b", brings to another problem. The returning value can be -1 (according to requirements) or a value a<=n<=b, this means it must be "long". Casting a possible very high value of an "unsigned long" to a long, could result in undefined behavior.
+	    * C++17 solves this problem using "std::optional<unsigned long>". Or even std::optional<uint64_t> for more portability.
+
+	2- "...double (*f)(long)...": 
+        * Depending on the dimension of the code in C++ and how many different possibilities the function could have, I would consider defining a class that provides such a function. The class would implement an also defined Interface. This interface could be mocked in a Mock file used for testing with Gtests, reaching an abstraction of the implementation of the provided function from our "find" function to be tested.
+
+- Python2 is not supported anymore for Ubuntu 24.04, since the support was removed on June 19, 2023 -> I had to deactivate this.
+
+- I couldn't do the "cmake target pkg"

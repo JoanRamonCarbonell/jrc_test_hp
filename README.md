@@ -36,7 +36,7 @@ make buildlib
 sudo make installlib
 
 ## Running Tests
-cd ..
+cd .. (if being in "build" directory)
 python3 test/one_test.py
 
 
