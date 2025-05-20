@@ -24,6 +24,7 @@ cd your-repo
 
 ## Create build directory
 mkdir -p build
+
 cd build
 
 ## Configure with CMake
@@ -37,6 +38,7 @@ sudo make installlib
 
 ## Running Tests
 cd .. (if being in "build" directory)
+
 python3 test/one_test.py
 
 
