@@ -38,7 +38,7 @@ python3 test/one_test.py
 
 
 ## Project Structure:
-
+```
 your-project/
 ├── CMakeLists.txt
 ├── includes/
@@ -52,6 +52,7 @@ your-project/
 │   └── one_test.py       # Python tests
 ├── build/                # (created during build)
 └── setup.py              # Python packaging config
+```
 
 
 This project includes a GitHub Actions workflow that works on all branches.
